@@ -1,6 +1,5 @@
 require 'pry'
 require 'sinatra'
-require 'better_errors'
 require 'sinatra/reloader'
 require 'pg'
 
@@ -15,12 +14,8 @@ before do
   Student.conn = @conn
 end
 
-configure :development do
-  use BetterErrors::Middleware
-  BetterErrors.application_root = __dir__
-end
 
-# SQUAD ROUTES
+# SQUAD ROUTES 
 
 get '/' do
   redirect '/squads'
